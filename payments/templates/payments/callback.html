@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback</title>
+
+    <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<center>
+<div class = "card bg-primary" style = "width: 600px;">
+
+<div class = "card-body">
+<h2 style = "color:white;">Congratulations!</h2>
+
+<h2 style = "color:white;">Your transaction was successfull</h2>
+<a class = "btn btn-danger" href = "{% url 'pay' %}">Return back to dashboard.</a>
+
+</div>
+
+</div>
+</center>
+
+
+
+
+<!--
+    <h2>Callback Messsage: </h2>                    <br>
+    <h3> Checksum Verification: {{ message }} </h3> <br>
+    MID: {{ response.MID }}                                  <br>
+    TXNID: {{ response.TXNID }}                              <br>
+    ORDERID: {{ response.ORDERID }}                          <br>
+    BANKTXNID: {{ response.BANKTXNID }}                      <br>
+    TXNAMOUNT: {{ response.TXNAMOUNT }}                      <br>
+    CURRENCY: {{ response.CURRENCY }}
+    Customer Id: {{ response.CUST_ID }}                       <br>
+    <h3> STATUS: {{ response.STATUS }} </h3>                 <br>
+    RESPCODE: {{ response.RESPCODE }}                        <br>
+    RESPMSG: {{ response.RESPMSG }}                          <br>
+    TXNDATE: {{ response.TXNDATE }}                          <br>
+    GATEWAYNAME: {{ response.GATEWAYNAME }}                  <br>
+    BANKNAME: {{ response.BANKNAME }}                        <br>
+    BIN_NAME: {{ response.BIN_NAME }}                        <br>
+    PAYMENTMODE: {{ response.PAYMENTMODE }}                  <br>
+    CHECKSUMHASH: {{ response.CHECKSUMHASH }}
+
+
+    {{ response }}-->
+</body>
+</html>

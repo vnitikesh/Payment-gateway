@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Payment Home</title>
+
+    <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+
+.card1{
+  border: 1px solid black;
+  padding:5px;
+  width:350px;
+  border-radius: 20px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+    <center><h2 style = "color:green; margin-top:7px;"><u>Outstanding Loans</u><sup style = "border:1px solid red;border-radius:500px;background-color:red;color:white;">{{ loan_count }}</sup></h2></center>
+    {% if error %}
+    <h3>{{ error }}</h3>
+    {% endif %}
+    <a class = "btn btn-danger" href = "{% url 'logout' %}">Logout</a>
+
+<center>
+
+    <div class="card" style="width:80%;margin-top: 70px;border: 1px solid gray;box-shadow: 1px 1px 5px 5px green;">
+
+    <div class="card-body">
+
+
+      {% for loan in loan %}
+      <div class = "card1">
+      <form method = "post">
+      <b style = "color:orange">Loan amount: <input type = "text" cols = "4"name = "amount" value = "{{ loan.amount }}" placeholder = "{{ loan.amount }}" /></b>
+      <b style = "color:orange;float:left;">Taken on:<small style = "color:black;">{{ loan.date_taken }}</small></b>
+      <p><b style = "color:orange;">Status: </b> {{ loan.status }}</p>
+
+        {% csrf_token %}
+
+      <input class = "btn btn-danger" type = "submit" name = "submit" value = "Pay" />
+      </form>
+      </div>
+      <br />
+      <br /><br />
+
+
+      {% endfor %}
+
+    </div>
+  </div>
+</center>
+</body>
+
+</html>
