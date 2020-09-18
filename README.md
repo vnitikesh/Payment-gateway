@@ -4,7 +4,7 @@
 
 <oll>
 <li>Activate your virtual environment</li>
-<li>git clone https://github.com/vnitikesh/ContactSite.git</li>
+<li>git clone https://github.com/vnitikesh/Payment-gateway.git</li>
 <li>python3 -m pip install -r requirements.txt</li>
 <li>python3 manage.py runserver</li>
 
